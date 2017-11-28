@@ -19,5 +19,11 @@
   "homepage": "https://github.com/snakerabbit/meteorite#readme",
   "devDependencies": {
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "d3": "^4.11.0",
+    "d3.js": "0.0.2-security",
+    "datamaps": "^0.5.8",
+    "topojson": "^3.0.2"
   }
 }
