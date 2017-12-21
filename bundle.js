@@ -67,7 +67,8 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-
+console.log("JS IS WORKING");
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=bundle.js.map
