@@ -72,6 +72,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dat_js__ = __webpack_require__(1);
 
 console.log(__WEBPACK_IMPORTED_MODULE_0__dat_js__["a" /* DATA */]);
+console.log("name", __WEBPACK_IMPORTED_MODULE_0__dat_js__["a" /* DATA */][0].name);
+console.log("geolocation", __WEBPACK_IMPORTED_MODULE_0__dat_js__["a" /* DATA */][0].geolocation);
+console.log("mass", __WEBPACK_IMPORTED_MODULE_0__dat_js__["a" /* DATA */][0].mass);
 
 /***/ }),
 /* 1 */
