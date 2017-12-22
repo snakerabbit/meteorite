@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#title {
+  width: 0;
+  align-self:center;
+}
+
+#select-options {
+  display:flex;
+  justify-content: center;
+}

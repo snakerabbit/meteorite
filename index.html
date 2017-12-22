@@ -7,29 +7,37 @@
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="bundle.js"></script>
     <script src="node_modules/datamaps/dist/datamaps.world.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <h3>Meteorite</h3>
-    <select>
-      <option>Filter by Mass</option>
-      <option></option>
-      <option></option>
-      <option></option>
-      <option></option>
-      <option></option>
-    </select>
-    <select>
-      <option>Filter by Year</option>
-      <option></option>
-      <option></option>
-      <option></option>
-      <option></option>
-      <option></option>
-    </select>
-    
+    <h3 id='title'>Meteorite</h3>
+    <div id='select-options'>
+      <select>
+        <option>Filter by Mass</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+      <select>
+        <option>Filter by Year</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+  </div>
+
     <div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
     <script>
-        var map = new Datamap({element: document.getElementById('container')});
+        var map = new Datamap({
+          element: document.getElementById('container'),
+          fills:{
+            defaultFill: 'blue'
+          }
+        });
     </script>
   </body>
 </html>
