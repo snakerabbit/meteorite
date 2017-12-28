@@ -45,14 +45,16 @@
                     mass: el.mass,
                     latitude: el.geolocation.coordinates[0],
                     longitude: el.geolocation.coordinates[1],
-                    radius: 75,
-                    borderColor: 'red'
+                    radius: 75
                   }
           }
         });
+        const options = {
+          borderColor:'black'
+        }
 
         console.log(refinedData);
-        map.bubbles(refinedData);
+        map.bubbles(refinedData, options);
 
     </script>
   </body>
