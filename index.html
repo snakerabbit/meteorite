@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Meteorite</title>
     <script src="js/d3.js"></script>
+    <script src="js/dat.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="bundle.js"></script>
     <script src="node_modules/datamaps/dist/datamaps.world.js"></script>
@@ -38,6 +39,29 @@
             defaultFill: 'blue'
           }
         });
+        console.log(DATA);
+        let refinedData = Object.values(DATA).map(el => {
+          if(el.geolocation){
+            console.log(el.geolocation.coordinates);
+            return {name: el.name,
+                    mass: el.mass,
+                    latitude: el.geolocation.coordinates[0],
+                    longitude: el.geolocation.coordinates[1],
+                  }
+          }
+        });
+
+        console.log(refinedData);
+        map.bubbles(DATA, {
+            popupTemplate: function (geo, data) {
+                    return ['<div class="hoverinfo">' +  data.name,
+                    '<br/>Payload: ' +  data.yield + ' kilotons',
+                    '<br/>Country: ' +  data.country + '',
+                    '<br/>Date: ' +  data.date + '',
+                    '</div>'].join('');
+            }
+        });
+
     </script>
   </body>
 </html>
