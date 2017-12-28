@@ -35,32 +35,24 @@
     <script>
         var map = new Datamap({
           element: document.getElementById('container'),
-          fills:{
-            defaultFill: 'blue'
-          }
+          fills:{defaultFill: 'blue'}
         });
+        console.log("map", map);
         console.log(DATA);
-        let refinedData = Object.values(DATA).map(el => {
+        const refinedData = Object.values(DATA).map(el => {
           if(el.geolocation){
-            console.log(el.geolocation.coordinates);
             return {name: el.name,
                     mass: el.mass,
                     latitude: el.geolocation.coordinates[0],
                     longitude: el.geolocation.coordinates[1],
+                    radius: 75,
+                    borderColor: 'red'
                   }
           }
         });
 
         console.log(refinedData);
-        map.bubbles(DATA, {
-            popupTemplate: function (geo, data) {
-                    return ['<div class="hoverinfo">' +  data.name,
-                    '<br/>Payload: ' +  data.yield + ' kilotons',
-                    '<br/>Country: ' +  data.country + '',
-                    '<br/>Date: ' +  data.date + '',
-                    '</div>'].join('');
-            }
-        });
+        map.bubbles(refinedData);
 
     </script>
   </body>
