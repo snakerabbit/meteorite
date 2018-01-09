@@ -67,6 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
+
 var mapImage;
 var centerLat = 0;
 var centerLong = 0;
@@ -84,7 +85,6 @@ function mercatorX(longitude) {
 	var a = 256 / Math.PI * Math.pow(2, zoom);
 	var b = longinRadians + Math.PI;
 	return a * b;
-	console.log(a * b);
 }
 
 function mercatorY(latitude) {
@@ -92,7 +92,7 @@ function mercatorY(latitude) {
 	var a = 256 / Math.PI * Math.pow(2, zoom);
 	var b = Math.tan(Math.PI / 4 + latinRadians / 2);
 	var c = Math.PI - Math.log(b);
-	console.log(a * c);
+
 	return a * c;
 }
 function setup() {
