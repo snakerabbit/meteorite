@@ -8,6 +8,9 @@
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="bundle.js"></script>
     <script src="node_modules/datamaps/dist/datamaps.world.js"></script>
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.js"></script>
+    <script src="libraries/p5.sound.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
@@ -29,32 +32,31 @@
         <option></option>
         <option></option>
       </select>
+      <script src='sketch.js'></script>
   </div>
-
-    <div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
     <script>
-        var map = new Datamap({
-          element: document.getElementById('container'),
-          fills:{defaultFill: 'blue'}
-        });
-        console.log("map", map);
-        console.log(DATA);
-        const refinedData = Object.values(DATA).map(el => {
-          if(el.geolocation){
-            return {name: el.name,
-                    mass: el.mass,
-                    latitude: el.geolocation.coordinates[0],
-                    longitude: el.geolocation.coordinates[1],
-                    radius: 75
-                  }
-          }
-        });
-        const options = {
-          borderColor:'black'
-        }
-
-        console.log(refinedData);
-        map.bubbles(refinedData);
+        // var map = new Datamap({
+        //   element: document.getElementById('container'),
+        //   fills:{defaultFill: 'blue'}
+        // });
+        // console.log("map", map);
+        // console.log(DATA);
+        // const refinedData = Object.values(DATA).map(el => {
+        //   if(el.geolocation){
+        //     return {name: el.name,
+        //             mass: el.mass,
+        //             latitude: el.geolocation.coordinates[0],
+        //             longitude: el.geolocation.coordinates[1],
+        //             radius: 75
+        //           }
+        //   }
+        // });
+        // const options = {
+        //   borderColor:'black'
+        // }
+        //
+        // console.log(refinedData);
+        // map.bubbles(refinedData);
 
     </script>
   </body>
