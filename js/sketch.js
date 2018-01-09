@@ -28,17 +28,12 @@ function mercatorY(latitude) {
 }
 
 
-function parseData() {
-
-}
-
 const refinedData = Object.values(DATA).map(el => {
 	if(el.geolocation){
 		return {name: el.name,
 						mass: el.mass,
-						latitude: el.geolocation.coordinates[0],
-						longitude: el.geolocation.coordinates[1],
-						radius: 75
+						latitude: el.geolocation.coordinates[1],
+						longitude: el.geolocation.coordinates[0]
 					};
 	}
 });
