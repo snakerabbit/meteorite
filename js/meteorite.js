@@ -40,4 +40,5 @@ function setup() {
 
 	fill(255, 0, 255, 200);
 	ellipse(x, y, 20, 20);
+
 }
