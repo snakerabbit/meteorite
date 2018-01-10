@@ -9,11 +9,18 @@ body {
 }
 
 #title {
-  width: 0;
-  align-self:center;
 }
 
 #select-options {
   display:flex;
   justify-content: center;
+
+}
+
+#select-options > * {
+  -webkit-appearance: none;
+  border: none
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
