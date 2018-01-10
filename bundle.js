@@ -104,8 +104,6 @@ function setup() {
 	var cy = mercatorY(centerLat);
 	var x = mercatorX(long) - cx;
 	var y = mercatorY(lat) - cy;
-	console.log(x);
-	console.log(y);
 
 	fill(255, 0, 255, 200);
 	ellipse(x, y, 20, 20);

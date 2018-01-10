@@ -46,7 +46,7 @@ function setup() {
 	imageMode(CENTER);
 	image(mapImage, 0, 0);
 	refinedData.forEach( function (meteorite) {
-		if(meteorite){
+		if(meteorite && meteorite.mass > 10000){
 			cx = mercatorX(centerLong);
 			cy = mercatorY(centerLat);
 			x = mercatorX(meteorite.longitude)- cx;
@@ -55,8 +55,5 @@ function setup() {
 			ellipse(x, y, Math.log(meteorite.mass), Math.log(meteorite.mass));
 		}
 	});
-
-	const canv = select('canvas');
-	console.log(canv);
 
 }
