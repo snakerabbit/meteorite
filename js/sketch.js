@@ -38,6 +38,7 @@ const refinedData = Object.values(DATA).map(el => {
 	}
 });
 
+
 let cx, cy, x, y;
 function setup() {
 	createCanvas(1280, 640);
@@ -54,4 +55,8 @@ function setup() {
 			ellipse(x, y, Math.log(meteorite.mass), Math.log(meteorite.mass));
 		}
 	});
+
+	const canv = select('canvas');
+	console.log(canv);
+
 }
