@@ -1,4 +1,3 @@
-console.log(DATA);
 
 var mapImage;
 var centerLat = 0;
@@ -31,7 +30,7 @@ function mercatorY(latitude) {
 const refinedData = Object.values(DATA).map(el => {
 	if(el.geolocation){
 		return {name: el.name,
-						mass: el.mass,
+						mass: Math.abs(Math.log(el.mass)),
 						latitude: el.geolocation.coordinates[1],
 						longitude: el.geolocation.coordinates[0]
 					};
@@ -40,20 +39,33 @@ const refinedData = Object.values(DATA).map(el => {
 
 
 let cx, cy, x, y;
+
+
 function setup() {
 	createCanvas(1280, 640);
 	translate(width/2, height/2);
 	imageMode(CENTER);
 	image(mapImage, 0, 0);
+	const canv = document.getElementById('defaultCanvas0');
 	refinedData.forEach( function (meteorite) {
-		if(meteorite && meteorite.mass > 10000){
+		if(meteorite){
 			cx = mercatorX(centerLong);
 			cy = mercatorY(centerLat);
 			x = mercatorX(meteorite.longitude)- cx;
 			y = mercatorY(meteorite.latitude) - cy;
 			fill(255, 0, 255, 200);
-			ellipse(x, y, Math.log(meteorite.mass), Math.log(meteorite.mass));
+			ellipse(x, y, meteorite.mass, meteorite.mass);
+
 		}
 	});
-
 }
+
+
+
+const draw = (circleData) => {
+	
+	d3.selectAll('svg:circle')
+		.data(circleData)
+		.enter()
+		.append('svg:circle');
+};
