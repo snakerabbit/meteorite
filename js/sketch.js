@@ -42,7 +42,7 @@ let cx, cy, x, y;
 
 
 function setup() {
-		createCanvas(1024, 512);
+		noLoop();
 }
 
 function reset(){
@@ -138,12 +138,17 @@ allyears.addEventListener('click', () => {
 	reset();
 });
 
+let circle;
+let xcoords;
+
 function draw() {
 	createCanvas(1024, 512);
 	translate(width/2, height/2);
 	imageMode(CENTER);
 	image(mapImage, 0, 0);
 	const canv = document.getElementById('defaultCanvas0');
+	frameRate(5);
+	// console.log(mouseX-512);
 	refinedData.forEach( function (meteorite) {
 		if(meteorite){
 			cx = mercatorX(centerLong);
@@ -160,8 +165,8 @@ function draw() {
 				fill(255, 0, 255, 200);
 			}
 
-			ellipse(x, y, meteorite.mass, meteorite.mass);
-
 		}
 	});
+
+
 }
