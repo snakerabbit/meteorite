@@ -42,6 +42,7 @@ let cx, cy, x, y;
 
 
 function setup() {
+		createCanvas(1024, 512);
 }
 
 function reset(){
