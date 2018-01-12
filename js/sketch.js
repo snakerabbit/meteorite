@@ -45,9 +45,8 @@ function setup() {
 	createCanvas(1024, 512);
 	const canv = document.getElementById('defaultCanvas0');
 	canv.addEventListener('click', (event)=>{
-		console.log(event);
+		// console.log(event);
 	});
-	noLoop();
 }
 
 function reset(){
