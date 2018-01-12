@@ -17,6 +17,10 @@ a {
   -webkit-appearance: none;
   color: white;
   text-decoration: none;
+  padding: 10px;
+}
+a:hover {
+  color: grey;
 }
 
 #footer {

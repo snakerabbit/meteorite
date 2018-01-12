@@ -42,6 +42,12 @@ let cx, cy, x, y;
 
 
 function setup() {
+	createCanvas(1024, 512);
+	const canv = document.getElementById('defaultCanvas0');
+	canv.addEventListener('click', (event)=>{
+		console.log(event);
+	});
+	noLoop();
 }
 
 function reset(){
@@ -137,8 +143,9 @@ allyears.addEventListener('click', () => {
 	reset();
 });
 
+
+
 function draw() {
-	createCanvas(1024, 512);
 	translate(width/2, height/2);
 	imageMode(CENTER);
 	image(mapImage, 0, 0);
