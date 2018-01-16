@@ -27,26 +27,24 @@ function mercatorY(latitude) {
 
 
 let refinedData = Object.values(DATA).map(el => {
-	if(el.geolocation){
+	if(el.geolocation && el.year){
 		return {name: el.name,
 						mass: Math.abs(Math.log(el.mass)),
 						latitude: el.geolocation.coordinates[1],
 						longitude: el.geolocation.coordinates[0],
-						year: el.year
+						year: parseInt(el.year.slice(0,4))
 					};
 	}
 });
 
 
 let cx, cy, x, y;
-
+let clickedName='';
+let clickedMass = '';
+let clickedYear = '';
 
 function setup() {
-	createCanvas(1024, 512);
-	const canv = document.getElementById('defaultCanvas0');
-	canv.addEventListener('click', (event)=>{
-		// console.log(event);
-	});
+		createCanvas(1024, 512);
 }
 
 function reset(){
@@ -60,6 +58,9 @@ function reset(){
 						};
 		}
 	});
+	clickedName = '';
+	clickedMass = '';
+	clickedYear = '';
 }
 
 const small = document.getElementById('small');
@@ -144,6 +145,8 @@ allyears.addEventListener('click', () => {
 
 
 
+
+
 function draw() {
 	translate(width/2, height/2);
 	imageMode(CENTER);
@@ -167,6 +170,37 @@ function draw() {
 
 		}
 	});
-
-
+fill('grey');
+textSize(25);
+text(clickedName, 300, 175);
+textSize(15);
+text(clickedMass, 300, 200);
+textSize(15)
+text(clickedYear, 300, 215);
 }
+
+window.addEventListener('click', (event)=>{
+	let clickX = event.offsetX-512;
+	let clickY = event.offsetY-256;
+	refinedData.forEach( function (meteorite) {
+		if(meteorite){
+			cx = mercatorX(centerLong);
+			cy = mercatorY(centerLat);
+			x = mercatorX(meteorite.longitude)- cx;
+			y = mercatorY(meteorite.latitude) - cy;
+			if(clickX + 5 > x && clickX - 5 < x){
+				if(clickY + 5 > y && clickY - 5 < y){
+					console.log(meteorite.name);
+					console.log(x);
+					console.log(y);
+					clickedName = meteorite.name;
+					clickedMass = 'Mass: ' + meteorite.mass;
+					clickedYear = 'Year: ' + meteorite.year;
+				}
+
+			}
+
+		}
+
+	});
+});
