@@ -8,13 +8,22 @@
     <script src="js/dat.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <script src="node_modules/datamaps/dist/datamaps.world.js"></script>
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.dom.js"></script>
     <script src="libraries/p5.sound.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id='modal-text'>
+          <p id='welcome'>Welcome to Meteorite</p>
+          <img src='https://www.windows2universe.org/our_solar_system/meteors/geminid_meteor_animation.gif' id='gif'></img>
+          <p>Click on the meteorites on the map to see details such as the name, mass, and the year it fell.  Filter the meteorites on the map by mass and by year using the filter buttons at the top.  </p>
+        </div>
+    </div>
+    </div>
     <h1 id='title'>Meteorite</h1>
     <div id='select-options'>
       <div class="dropdown">

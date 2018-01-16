@@ -1,3 +1,4 @@
+
 var mapImage;
 var centerLat = 0;
 var centerLong = 0;
@@ -190,11 +191,8 @@ window.addEventListener('click', (event)=>{
 			y = mercatorY(meteorite.latitude) - cy;
 			if(clickX + 5 > x && clickX - 5 < x){
 				if(clickY + 5 > y && clickY - 5 < y){
-					console.log(meteorite.name);
-					console.log(x);
-					console.log(y);
 					clickedName = meteorite.name;
-					clickedMass = 'Mass: ' + meteorite.mass;
+					clickedMass = 'Mass: ' + Math.floor(Math.pow(Math.E, meteorite.mass)) + ' kg';
 					clickedYear = 'Year: ' + meteorite.year;
 				}
 
@@ -203,4 +201,20 @@ window.addEventListener('click', (event)=>{
 		}
 
 	});
+});
+
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+};
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+window.addEventListener('resize', ()=>{
+	
 });

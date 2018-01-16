@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './js/meteorite.js',
+  entry: './js/sketch.js',
   output: {
     filename: './bundle.js',
   },
