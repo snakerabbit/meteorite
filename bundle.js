@@ -252,7 +252,7 @@ window.addEventListener('click', event => {
 			if (clickX + 5 > x && clickX - 5 < x) {
 				if (clickY + 5 > y && clickY - 5 < y) {
 					clickedName = meteorite.name;
-					clickedMass = 'Mass: ' + Math.floor(Math.pow(Math.E, meteorite.mass)) + ' kg';
+					clickedMass = 'Mass: ' + Math.floor(Math.pow(Math.E, meteorite.mass)) + ' g';
 					clickedYear = 'Year: ' + meteorite.year;
 				}
 			}
