@@ -7,7 +7,7 @@ Meteorite is a data visualization tool to map the recorded meteorite landings pr
 
 ## Functionality
 In Meteorite, users are able to:
-* View all meteorites
+* View all meteorites color-coded and sized by mass (radii are based on a logarithmic scale of grams)
 * Filter the meteorites on the map by mass or by year
 * Click on the data bubbles for more information on individual meteorites
 
@@ -20,6 +20,6 @@ This project will be implemented with the following technologies:
 * MapBox API for rendering global map and geographic information
 * P5 and D3 for data representation
 
-
-
 ## Future Direction
+* Add a 3D rendering of the globe using WebGL
+* Add zoom and scrolling functionality to the MapBox API
