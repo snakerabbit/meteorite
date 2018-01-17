@@ -3,7 +3,7 @@
 ## Background
 Meteorite is a data visualization tool to map the recorded meteorite landings provided by [NASA's Open Data Portal](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh) and recorded by [The Meteoritical Society](http://www.meteoriticalsociety.org/).  The map illustrates the geographic coordinates of the landings, and provides recorded data such as name, mass, and year for each meteorite.  
 
-![Meteorite](https://i.imgur.com/JVfLPYz.gif)
+![Meteorite](https://i.imgur.com/eqffb3k.png)
 
 ## Functionality
 In Meteorite, users are able to:
